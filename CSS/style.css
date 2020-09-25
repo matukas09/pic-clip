@@ -1,6 +1,6 @@
 :root {
-    --dark-color: #000;
-    --medium-color: rgb(47, 21, 117);
+    --dark-color: rgba(0, 0, 0, 0.308);
+    --medium-color: rgba(47, 21, 117, 0.13);
     --light-color: #fff;
 }
 
@@ -20,8 +20,106 @@ body {
 
 .header {
     height: 95vh;
-    background-image: url('../img/logo-white.png');
+    background-image: linear-gradient(to bottom right,
+    var(--medium-color), var(--light-color)), url('../img/space.gif');
     background-size: cover;
     background-position: top;
-    clip-path: polygon(44% 0, 100% 0%, 100% 100%, 0 100%, 0 38%);
+    clip-path: polygon(0 0, 100% 0, 100% 77%, 0 100%, 0 100%, 0% 50%);
+}
+
+.logo-box {
+    position: absolute;
+    top: 6%;
+    left: 3%;
+}
+.logo {
+    height: 1.7rem;
+}
+
+.text-box {
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: rgb(233, 38, 207);
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 3.8rem;
+    letter-spacing: 1.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 0.6rem;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+    
+}
+.btn-div {
+    text-align: center;
+}
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid #3700ff;
+    padding: 1rem;
+    margin: 2rem;
+animation-name: btn;
+animation-duration: 5s;
+transition: transform;
+transition-duration: 3s;
+transition-property: transform;
+}
+
+.btn:hover {
+    transform: rotateY(180deg);
+}
+
+@keyframes btn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
